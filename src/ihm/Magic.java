@@ -75,7 +75,7 @@ public class Magic extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(225, Short.MAX_VALUE)
+                .addContainerGap(251, Short.MAX_VALUE)
                 .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,7 +93,7 @@ public class Magic extends javax.swing.JFrame {
                                     .addComponent(BtValider)
                                     .addComponent(jRetour))
                                 .addGap(26, 26, 26))))
-                    .addContainerGap(147, Short.MAX_VALUE)))
+                    .addContainerGap(173, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,9 +120,7 @@ public class Magic extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 26, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,7 +141,6 @@ public class Magic extends javax.swing.JFrame {
 
     private void BtValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtValiderActionPerformed
         // TODO add your handling code here:
-        //timer.stop();
         rep = Integer.parseInt(txtRep.getText());
         // System.out.println("rep = " + rep);
 
@@ -156,7 +153,7 @@ public class Magic extends javax.swing.JFrame {
             if (rep > nombre){
             Msg.setText("Plus petit !");
             }
-            if (nb == 0) { 
+            if (nb <= 0) { 
                 JOptionPane.showMessageDialog(null, "Temps écoulé");
             }
         }
@@ -164,42 +161,25 @@ public class Magic extends javax.swing.JFrame {
         if (rep == nombre){
             Msg.setText("Trouvé !");
             gener();
+            timer.stop();
             but-= 5;
-            timer();
+            nb = but;
+            timer.restart();
         }
     }//GEN-LAST:event_BtValiderActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-                //timer.stop();
-        rep = Integer.parseInt(txtRep.getText());
-        // System.out.println("rep = " + rep);
+        gener();
+        timer();
 
-        if ( rep != nombre){
-            
-            if (rep < nombre){
-            Msg.setText("Plus grand !");
-            
-            }
-            if (rep > nombre){
-            Msg.setText("Plus petit !");
-            }
-            //if (nb == 0) { JOptions.showMessageDialog(null, "Temps écoulé");}
-        }
-        
-        if (rep == nombre){
-            Msg.setText("Trouvé !");
-            //gener();
-            //but-= 5;
-            //timer();
-        }
     }//GEN-LAST:event_formWindowOpened
 
     int nombre;
     int rep;
     Timer timer;
     int but = 60;
-    int nb;
+    int nb = but;
     
     
     public void gener(){
@@ -210,7 +190,6 @@ public class Magic extends javax.swing.JFrame {
     
     
     private void timer(){
-        nb = but;
         timer = new Timer(1000, new ActionListener() {
         @Override
         
