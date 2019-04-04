@@ -50,7 +50,7 @@ public class Profile extends javax.swing.JFrame {
         lbSSTitre2 = new javax.swing.JLabel();
         butJeu = new javax.swing.JButton();
         butPoids1 = new javax.swing.JButton();
-        butPoids2 = new javax.swing.JButton();
+        butTendancesPoids = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 206, 224));
@@ -166,12 +166,12 @@ public class Profile extends javax.swing.JFrame {
             }
         });
 
-        butPoids2.setFont(new java.awt.Font("Century Gothic", 0, 10)); // NOI18N
-        butPoids2.setForeground(new java.awt.Color(0, 0, 0));
-        butPoids2.setText("Tendances Poids");
-        butPoids2.addActionListener(new java.awt.event.ActionListener() {
+        butTendancesPoids.setFont(new java.awt.Font("Century Gothic", 0, 10)); // NOI18N
+        butTendancesPoids.setForeground(new java.awt.Color(0, 0, 0));
+        butTendancesPoids.setText("Tendances Poids");
+        butTendancesPoids.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                butPoids2ActionPerformed(evt);
+                butTendancesPoidsActionPerformed(evt);
             }
         });
 
@@ -200,7 +200,7 @@ public class Profile extends javax.swing.JFrame {
                         .addGap(39, 39, 39)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(butHisto)
-                            .addComponent(butPoids2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(butTendancesPoids, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -259,7 +259,7 @@ public class Profile extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(iconPoids, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(butPoids2)
+                                        .addComponent(butTendancesPoids)
                                         .addGap(9, 9, 9)))
                                 .addGap(32, 32, 32)
                                 .addComponent(iconObjective, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -347,9 +347,10 @@ public class Profile extends javax.swing.JFrame {
 
     }//GEN-LAST:event_butPoidsActionPerformed
 
-    private void butPoids2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPoids2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_butPoids2ActionPerformed
+    private void butTendancesPoidsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butTendancesPoidsActionPerformed
+        TendancePoids tp = new TendancePoids(u);
+        tp.setVisible(true);
+    }//GEN-LAST:event_butTendancesPoidsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -391,7 +392,7 @@ public class Profile extends javax.swing.JFrame {
     private javax.swing.JButton butJeu;
     private javax.swing.JButton butPoids;
     private javax.swing.JButton butPoids1;
-    private javax.swing.JButton butPoids2;
+    private javax.swing.JButton butTendancesPoids;
     private javax.swing.JLabel iconNom;
     private javax.swing.JLabel iconObjective;
     private javax.swing.JLabel iconPoids;

@@ -22,7 +22,7 @@ public class HistoDao {
     public static List getDatesParUser(User u) throws SQLException{
         
     //LISTE DES DATES
-        List<Date> dates = new ArrayList<>();
+        List<String> dates = new ArrayList<>();
     
     //REQUETE SQL
         String sql = "SELECT poidsEvo, dateEvo FROM evopoids WHERE user.iduser = evopoids.idUser AND user.nom =? ";
@@ -35,7 +35,7 @@ public class HistoDao {
     
     //CONSUTRUCTION DE LA LISTE DES DATES
         while (rs.next()){
-            dates.add(rs.getDate("dateEvo"));
+            dates.add(rs.getString("dateEvo"));
         }
         return dates;
     }
