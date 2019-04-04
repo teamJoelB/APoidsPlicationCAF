@@ -25,7 +25,7 @@ public class HistoDao {
         List<String> dates = new ArrayList<>();
     
     //REQUETE SQL
-        String sql = "SELECT poidsEvo, dateEvo FROM evopoids WHERE user.iduser = evopoids.idUser AND user.nom =? ";
+        String sql = "SELECT poidsEvo, dateEvo FROM evopoids, user WHERE user.iduser = evopoids.idUser AND user.nom =? ";
     
     //CONNEXION A LA BASE DE DONNES
         Connection connexion = ConnectBd.getConnection();
@@ -45,7 +45,7 @@ public class HistoDao {
         
         List<Double> listPoids = new ArrayList<>();
         
-        String sql = "SELECT poidsEvo, dateEvo FROM evopoids WHERE user.iduser = evopoids.idUser AND user.nom =? ";
+        String sql = "SELECT poidsEvo, dateEvo FROM evopoids,user WHERE user.iduser = evopoids.idUser AND user.nom =? ";
         
         Connection connexion = ConnectBd.getConnection();
         PreparedStatement ordre = connexion.prepareStatement(sql);

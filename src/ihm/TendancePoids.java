@@ -26,6 +26,7 @@ public class TendancePoids extends javax.swing.JFrame {
         
         try {
             dates = HistoDao.getDatesParUser(u);
+            System.out.println(dates.get(2));
             
         } catch (Exception e) {
             System.out.println(e.getMessage());
