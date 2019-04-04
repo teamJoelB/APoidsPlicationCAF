@@ -29,7 +29,7 @@ public class TendancePoids extends javax.swing.JFrame {
             System.out.println(dates.get(2));
             String s = "";
             for (int i = 0; i < dates.size(); i++) {
-            s = s + dates.get(i);
+            s = s + dates.get(i) + "  ";
             
             }
             
