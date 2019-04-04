@@ -67,9 +67,9 @@
                               </Group>
                           </Group>
                           <EmptySpace pref="27" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="butPoids1" alignment="1" min="-2" pref="122" max="-2" attributes="0"/>
-                              <Component id="butPoids" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="butPoids1" pref="122" max="32767" attributes="0"/>
+                              <Component id="butPoids" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -95,8 +95,8 @@
                           </Group>
                           <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lbTitre" min="-2" max="-2" attributes="0"/>
                               <Component id="lbSSTitre" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbTitre" min="-2" pref="337" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -104,7 +104,7 @@
                           <Component id="butJeu" min="-2" pref="95" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="35" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -149,10 +149,6 @@
                           <Component id="lbSSTitre1" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                                  <Component id="butPoids" min="-2" pref="54" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="iconPoids" min="-2" pref="50" max="-2" attributes="0"/>
@@ -172,6 +168,11 @@
                                       <Component id="butPoids1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="butHisto" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                                  <Component id="butPoids" min="-2" pref="54" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -196,6 +197,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;center&gt;Ajouter Poids&lt;br/&gt;Du Jour&lt;/center&gt;&lt;/html&gt;&#xa;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="butPoidsActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="butHisto">
           <Properties>

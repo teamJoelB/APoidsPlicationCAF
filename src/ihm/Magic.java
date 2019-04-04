@@ -5,7 +5,13 @@
  */
 package ihm;
 
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.time;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
+import bean.User;
+import static ihm.Profile.u;
 
 /**
  *
@@ -29,19 +35,33 @@ public class Magic extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         BtValider = new javax.swing.JButton();
         Msg = new javax.swing.JLabel();
         txtRep = new javax.swing.JTextField();
         jRetour = new javax.swing.JButton();
+        time = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel1.setText("Magic");
 
-        BtValider.setText("jButton1");
+        BtValider.setText("Valider");
+        BtValider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtValiderActionPerformed(evt);
+            }
+        });
 
-        Msg.setText("jLabel2");
+        Msg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        txtRep.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jRetour.setText("Retour");
         jRetour.addActionListener(new java.awt.event.ActionListener() {
@@ -50,41 +70,61 @@ public class Magic extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(251, Short.MAX_VALUE)
+                .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(83, 83, 83)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(48, 48, 48)
+                            .addComponent(jLabel1))
+                        .addComponent(Msg, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtRep, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(BtValider)
+                                    .addComponent(jRetour))
+                                .addGap(26, 26, 26))))
+                    .addContainerGap(173, Short.MAX_VALUE)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(245, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(18, 18, 18)
+                    .addComponent(jLabel1)
+                    .addGap(82, 82, 82)
+                    .addComponent(txtRep, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(31, 31, 31)
+                    .addComponent(Msg, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(26, 26, 26)
+                    .addComponent(BtValider)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jRetour)
+                    .addContainerGap(29, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(172, 172, 172)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Msg, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtValider)
-                            .addComponent(jRetour))))
-                .addContainerGap(168, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(txtRep, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                .addComponent(txtRep, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(Msg, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BtValider)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRetour)
-                .addGap(13, 13, 13))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -93,26 +133,14 @@ public class Magic extends javax.swing.JFrame {
     private void jRetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRetourActionPerformed
         this.setVisible(false);
         JOptionPane.showMessageDialog(null, "Merci d'avoir joué");
-        Profile p = new Profile();
+        Profile p = new Profile(u);
         p.setVisible(true);
        
         
     }//GEN-LAST:event_jRetourActionPerformed
 
-        int nombre;
-    int rep;
-    
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {                                  
+    private void BtValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtValiderActionPerformed
         // TODO add your handling code here:
- 
-        nombre = (int)(Math.random()*30) ;
-        System.out.println(nombre);
-        
-    }                                 
-
-    private void BtValiderActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        // TODO add your handling code here:
-        
         rep = Integer.parseInt(txtRep.getText());
         // System.out.println("rep = " + rep);
 
@@ -125,13 +153,55 @@ public class Magic extends javax.swing.JFrame {
             if (rep > nombre){
             Msg.setText("Plus petit !");
             }
+            if (nb <= 0) { 
+                JOptionPane.showMessageDialog(null, "Temps écoulé");
+            }
         }
         
         if (rep == nombre){
             Msg.setText("Trouvé !");
-            nombre = (int)(Math.random())*30 ;
+            gener();
+            timer.stop();
+            but-= 5;
+            nb = but;
+            timer.restart();
         }
-    }  
+    }//GEN-LAST:event_BtValiderActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        gener();
+        timer();
+
+    }//GEN-LAST:event_formWindowOpened
+
+    int nombre;
+    int rep;
+    Timer timer;
+    int but = 60;
+    int nb = but;
+    
+    
+    public void gener(){
+        nombre = (int)(Math.random()*30) ;
+        System.out.println(nombre);
+    }
+         
+    
+    
+    private void timer(){
+        timer = new Timer(1000, new ActionListener() {
+        @Override
+        
+        public void actionPerformed(ActionEvent e) {
+        time.setText(String.valueOf(nb) + " s");
+        nb--;
+        }
+        });
+        timer.start();
+        }
+           
+      
     /**
      * @param args the command line arguments
      */
@@ -171,7 +241,9 @@ public class Magic extends javax.swing.JFrame {
     private javax.swing.JButton BtValider;
     private javax.swing.JLabel Msg;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jRetour;
+    private javax.swing.JLabel time;
     private javax.swing.JTextField txtRep;
     // End of variables declaration//GEN-END:variables
 }

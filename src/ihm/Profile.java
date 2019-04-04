@@ -8,19 +8,20 @@ package ihm;
 import bean.User;
 import dao.UserDao;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author ESIC
  */
 public class Profile extends javax.swing.JFrame {
+
+    static User u;
     
     
-    /**
-     * Creates new form Profile
-     */
-    public Profile() {
+    public Profile(User u) {
         initComponents();
+        this.u = u;
     }
 
     /**
@@ -64,6 +65,11 @@ public class Profile extends javax.swing.JFrame {
         butPoids.setFont(new java.awt.Font("Century Gothic", 0, 10)); // NOI18N
         butPoids.setForeground(new java.awt.Color(0, 0, 0));
         butPoids.setText("<html><center>Ajouter Poids<br/>Du Jour</center></html>\n");
+        butPoids.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butPoidsActionPerformed(evt);
+            }
+        });
 
         butHisto.setFont(new java.awt.Font("Century Gothic", 0, 10)); // NOI18N
         butHisto.setForeground(new java.awt.Color(0, 0, 0));
@@ -183,9 +189,9 @@ public class Profile extends javax.swing.JFrame {
                                 .addGap(12, 12, 12)
                                 .addComponent(lbPoids)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(butPoids1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(butPoids, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(butPoids1, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                            .addComponent(butPoids))
                         .addGap(39, 39, 39)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(butHisto)
@@ -204,12 +210,12 @@ public class Profile extends javax.swing.JFrame {
                             .addComponent(iconNom, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(47, 47, 47)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbTitre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbSSTitre)))
+                            .addComponent(lbSSTitre)
+                            .addComponent(lbTitre, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(193, 193, 193)
                         .addComponent(butJeu, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(lbSSTitre2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -244,9 +250,6 @@ public class Profile extends javax.swing.JFrame {
                         .addComponent(lbSSTitre1)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(66, 66, 66)
-                                .addComponent(butPoids, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(73, 73, 73)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(iconPoids, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -261,7 +264,11 @@ public class Profile extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(butPoids1)
-                                    .addComponent(butHisto))))))
+                                    .addComponent(butHisto)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(66, 66, 66)
+                                .addComponent(butPoids, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(48, 48, 48)
                 .addComponent(lbSSTitre2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -300,24 +307,33 @@ public class Profile extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         
-       String nom;
-       String prenom;
+       String nom = u.getNom();
+       String prenom = u.getPrenom();
+       lbTitre.setText("Bienvenue, " + prenom + " " + nom);
+       double poids = u.getPoids();
+       lbPoids.setText("Poids : " + poids + " kg");
        
-        
-        
-        
-        
-        String bienv = lbTitre.getText();
-        lbTitre.setText(bienv+" ");
-        
-        
-        
         
         
 
 
 
     }//GEN-LAST:event_formWindowOpened
+
+    private void butPoidsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPoidsActionPerformed
+     
+        this.setVisible(false);
+        String poidS = JOptionPane.showInputDialog("Poids du jours");
+        int poids = Integer.parseInt(poidS);
+        u.setPoids(poids);
+        Profile p = new Profile(u);
+        p.setVisible(true);
+        
+        // ajouter dans le evoPoids
+
+
+
+    }//GEN-LAST:event_butPoidsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -349,7 +365,7 @@ public class Profile extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Profile().setVisible(true);
+                new Profile(u).setVisible(true);
             }
         });
     }
