@@ -49,7 +49,7 @@ public class HistoDao {
         
         Connection connexion = ConnectBd.getConnection();
         PreparedStatement ordre = connexion.prepareStatement(sql);
-        ordre.setString(1, u.getMail());
+        ordre.setString(1, u.getNom());
         ResultSet rs = ordre.executeQuery();
 
         
