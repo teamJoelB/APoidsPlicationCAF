@@ -184,10 +184,10 @@ public class Connexion extends javax.swing.JFrame {
         User u;
         String login = txtLogin.getText();
         char [] c = txtMdp.getPassword();
-        String varMdp = new String(c);
+        String mdp = new String(c);
         
         try {
-            u = UserDao.getByLoginPass(login, varMdp);
+            u = UserDao.getByLoginPass(login, mdp);
             
             if (u != null){
             Profile p = new Profile();
