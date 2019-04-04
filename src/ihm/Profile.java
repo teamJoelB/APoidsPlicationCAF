@@ -5,6 +5,10 @@
  */
 package ihm;
 
+import bean.User;
+import dao.UserDao;
+import java.util.List;
+
 /**
  *
  * @author ESIC
@@ -48,13 +52,17 @@ public class Profile extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 206, 224));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(204, 206, 224));
 
         butPoids.setFont(new java.awt.Font("Century Gothic", 0, 10)); // NOI18N
         butPoids.setForeground(new java.awt.Color(0, 0, 0));
         butPoids.setText("<html><center>Ajouter Poids<br/>Du Jour</center></html>\n");
-        butPoids.setActionCommand("<html><center>Ajouter Poids<br/>Du Jour</center></html>\n");
 
         butHisto.setFont(new java.awt.Font("Century Gothic", 0, 10)); // NOI18N
         butHisto.setForeground(new java.awt.Color(0, 0, 0));
@@ -264,9 +272,7 @@ public class Profile extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,12 +287,36 @@ public class Profile extends javax.swing.JFrame {
     }//GEN-LAST:event_butHistoActionPerformed
 
     private void butJeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butJeuActionPerformed
-        // TODO add your handling code here:
+        Magic m = new Magic();
+        this.setVisible(false);
+        m.setVisible(true);
+ 
     }//GEN-LAST:event_butJeuActionPerformed
 
     private void butPoids1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPoids1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_butPoids1ActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        
+       String nom;
+       String prenom;
+       
+        
+        
+        
+        
+        String bienv = lbTitre.getText();
+        lbTitre.setText(bienv+" ");
+        
+        
+        
+        
+        
+
+
+
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
