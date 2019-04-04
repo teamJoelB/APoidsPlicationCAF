@@ -7,6 +7,7 @@ package ihm;
 
 import bean.User;
 import dao.UserDao;
+import dao.HistoDao;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -333,7 +334,10 @@ public class Profile extends javax.swing.JFrame {
         int poids = Integer.parseInt(poidS);
         u.setPoids(poids);
         try {
-          UserDao.newPoids(poids, u);    
+          UserDao.newPoids(poids, u);  
+          
+          HistoDao.newEvoPoids(u, poids);
+          
         } catch (Exception e){
             JOptionPane.showMessageDialog(rootPane, e.getMessage());
         }

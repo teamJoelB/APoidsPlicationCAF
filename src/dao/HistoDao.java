@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,6 +20,22 @@ import java.util.List;
 
 
 public class HistoDao {
+    
+    public static void newEvoPoids(User u, int poids)
+    throws SQLException{
+        
+        
+        String sql = "INSERT INTO evopoids (idUser, poidsEvo) VALUES (?, ?)";
+         
+        Connection connexion = ConnectBd.getConnection();
+       
+        PreparedStatement ordre = connexion.prepareStatement(sql);
+         
+         
+         ordre.setInt(1, u.getId());
+         ordre.setInt(2, poids);
+         ordre.execute();
+}
     
     public static List getDatesParUser(User u) throws SQLException{
         
