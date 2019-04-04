@@ -50,11 +50,11 @@ public class Connexion extends javax.swing.JFrame {
         bg1.setForeground(new java.awt.Color(113, 122, 190));
 
         lbTitre.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        lbTitre.setForeground(new java.awt.Color(0, 0, 0));
+        lbTitre.setForeground(new java.awt.Color(255, 255, 255));
         lbTitre.setText("Bienvenue sur APoidsPlication");
 
         lbSousTitre.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        lbSousTitre.setForeground(new java.awt.Color(0, 0, 0));
+        lbSousTitre.setForeground(new java.awt.Color(255, 255, 255));
         lbSousTitre.setText("L'application qui vous veut du bien");
 
         javax.swing.GroupLayout bg1Layout = new javax.swing.GroupLayout(bg1);
