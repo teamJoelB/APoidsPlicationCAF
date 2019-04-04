@@ -86,6 +86,11 @@ public class Connexion extends javax.swing.JFrame {
         lbMdp.setForeground(new java.awt.Color(0, 0, 0));
         lbMdp.setText("Mot de passe");
 
+        txtLogin.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+
+        txtMdp.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+
+        butConnexion.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         butConnexion.setText("Connexion");
         butConnexion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,6 +98,7 @@ public class Connexion extends javax.swing.JFrame {
             }
         });
 
+        butInscription.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         butInscription.setText("Inscription");
         butInscription.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,14 +126,15 @@ public class Connexion extends javax.swing.JFrame {
                             .addComponent(txtMdp, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
                             .addComponent(txtLogin)))
                     .addGroup(bg2Layout.createSequentialGroup()
-                        .addGap(383, 383, 383)
+                        .addGap(382, 382, 382)
                         .addComponent(butConnexion))
                     .addGroup(bg2Layout.createSequentialGroup()
-                        .addGap(383, 383, 383)
-                        .addComponent(butInscription))
-                    .addGroup(bg2Layout.createSequentialGroup()
-                        .addGap(372, 372, 372)
-                        .addComponent(lbPasEncore, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(373, 373, 373)
+                        .addGroup(bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bg2Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(butInscription, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbPasEncore, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         bg2Layout.setVerticalGroup(
@@ -141,9 +148,9 @@ public class Connexion extends javax.swing.JFrame {
                 .addGroup(bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbMdp)
                     .addComponent(txtMdp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addGap(34, 34, 34)
                 .addComponent(butConnexion)
-                .addGap(65, 65, 65)
+                .addGap(63, 63, 63)
                 .addComponent(lbPasEncore)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(butInscription)
@@ -174,7 +181,8 @@ public class Connexion extends javax.swing.JFrame {
     }//GEN-LAST:event_butConnexionActionPerformed
 
     private void butInscriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butInscriptionActionPerformed
-        // TODO add your handling code here:
+        Inscription i = new Inscription();
+        i.setVisible(true);
     }//GEN-LAST:event_butInscriptionActionPerformed
 
     /**
