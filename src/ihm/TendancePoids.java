@@ -5,17 +5,39 @@
  */
 package ihm;
 
+import bean.User;
+import dao.HistoDao;
+import dao.UserDao;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author ESIC
  */
 public class TendancePoids extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TendancePoids
-     */
-    public TendancePoids() {
+    static User u;
+    
+    public TendancePoids(User u) {
         initComponents();
+        this.u = u;
+        List<String> dates = new ArrayList<>();
+        
+        try {
+            dates = HistoDao.getDatesParUser(u);
+            System.out.println(dates.get(2));
+            String s = "";
+            for (int i = 0; i < dates.size(); i++) {
+            s = s + dates.get(i);
+            
+            }
+            
+            lbDate.setText(s);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
     }
 
     /**
@@ -117,9 +139,11 @@ public class TendancePoids extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+   
+    
+    
     private void butRetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butRetourActionPerformed
         this.setVisible(false);
-        
     }//GEN-LAST:event_butRetourActionPerformed
 
     /**
@@ -152,7 +176,7 @@ public class TendancePoids extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TendancePoids().setVisible(true);
+                new TendancePoids(u).setVisible(true);
             }
         });
     }
