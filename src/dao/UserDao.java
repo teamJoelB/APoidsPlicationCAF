@@ -32,7 +32,30 @@ public class UserDao {
              u.setNom(rs.getString("nom"));
              u.setPrenom(rs.getString("prenom"));
              u.setMdp(rs.getString("mail"));
+             u.setSexe(rs.getString("sexe"));
+             u.setTaille(rs.getInt("taille"));
+             u.setPoids(rs.getDouble("poids"));
          }
         return u;
+    }
+    
+    public static void insertUser(User u)
+            throws SQLException{
+        String sql = "INSERT INTO user (nom, prenom, mail, mdp, sexe, taille, poids) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        
+        Connection connexion = ConnectBd.getConnection();
+        
+        PreparedStatement ordre = connexion.prepareStatement(sql);
+        
+        ordre.setString(1, u.getNom());
+        ordre.setString(2, u.getPrenom());
+        ordre.setString(3, u.getMail());
+        ordre.setString(4, u.getMdp());
+        ordre.setString(5, u.getSexe());
+        ordre.setInt(6, u.getTaille());
+        ordre.setDouble(7, u.getPoids());
+        
+        
+        ordre.execute();
     }
 }
