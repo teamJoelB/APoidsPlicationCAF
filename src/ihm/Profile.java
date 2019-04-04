@@ -14,7 +14,8 @@ import java.util.List;
  * @author ESIC
  */
 public class Profile extends javax.swing.JFrame {
-
+    
+    
     /**
      * Creates new form Profile
      */
