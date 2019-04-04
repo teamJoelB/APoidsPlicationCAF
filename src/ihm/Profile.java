@@ -323,11 +323,18 @@ public class Profile extends javax.swing.JFrame {
     private void butPoidsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPoidsActionPerformed
      
         this.setVisible(false);
+        
         String poidS = JOptionPane.showInputDialog("Poids du jours");
         int poids = Integer.parseInt(poidS);
         u.setPoids(poids);
+        try {
+          UserDao.newPoids(poids, u);    
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(rootPane, e.getMessage());
+        }
         Profile p = new Profile(u);
         p.setVisible(true);
+        
         
         // ajouter dans le evoPoids
 

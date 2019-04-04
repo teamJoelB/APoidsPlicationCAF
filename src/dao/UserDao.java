@@ -13,8 +13,22 @@ import java.util.List;
 
 public class UserDao {
     
-    String varMdp;
     
+    public static void newPoids(int poids, User u)
+    throws SQLException{
+        
+        
+        String sql = "UPDATE user SET poids=? WHERE user.iduser=?";
+         
+        Connection connexion = ConnectBd.getConnection();
+       
+        PreparedStatement ordre = connexion.prepareStatement(sql);
+         
+         ordre.setInt(1, poids);
+         ordre.setInt(2, u.getId());
+         
+         ordre.execute();
+}
     
     public static User getByLoginPass(String login, String mdp)
     throws SQLException{
