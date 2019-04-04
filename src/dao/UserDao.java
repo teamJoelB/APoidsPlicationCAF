@@ -28,7 +28,7 @@ public class UserDao {
          // si on trouve un utilisateur equivalent aux données rentrées dans la bdd
          if(rs.next()){
              u = new User();
-             u.setId(rs.getInt("id"));
+             u.setId(rs.getInt("iduser"));
              u.setNom(rs.getString("nom"));
              u.setPrenom(rs.getString("prenom"));
              u.setMdp(rs.getString("mail"));

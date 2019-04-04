@@ -5,6 +5,10 @@
  */
 package ihm;
 
+import bean.User;
+import dao.UserDao;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ESIC
@@ -177,7 +181,25 @@ public class Connexion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void butConnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butConnexionActionPerformed
-        // TODO add your handling code here:
+        User u;
+        String login = txtLogin.getText();
+        char [] c = txtMdp.getPassword();
+        String mdp = new String(c);
+        
+        try {
+            u = UserDao.getByLoginPass(login, mdp);
+            
+            if (u != null){
+            this.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Connexion réussie");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Login ou Mot de passe érroné");
+        }
+            
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(rootPane, e.getMessage());
+        }
     }//GEN-LAST:event_butConnexionActionPerformed
 
     private void butInscriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butInscriptionActionPerformed
