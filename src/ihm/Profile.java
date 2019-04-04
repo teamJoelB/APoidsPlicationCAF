@@ -169,6 +169,11 @@ public class Profile extends javax.swing.JFrame {
         butPoids2.setFont(new java.awt.Font("Century Gothic", 0, 10)); // NOI18N
         butPoids2.setForeground(new java.awt.Color(0, 0, 0));
         butPoids2.setText("Tendances Poids");
+        butPoids2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butPoids2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -334,6 +339,10 @@ public class Profile extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_butPoidsActionPerformed
+
+    private void butPoids2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butPoids2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butPoids2ActionPerformed
 
     /**
      * @param args the command line arguments
