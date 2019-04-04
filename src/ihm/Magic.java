@@ -36,12 +36,13 @@ public class Magic extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         BtValider = new javax.swing.JButton();
         Msg = new javax.swing.JLabel();
         txtRep = new javax.swing.JTextField();
         jRetour = new javax.swing.JButton();
         time = new javax.swing.JLabel();
+        Consigne = new javax.swing.JLabel();
+        TitreM = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -50,7 +51,8 @@ public class Magic extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Magic");
+        jPanel1.setBackground(new java.awt.Color(204, 206, 204));
+        jPanel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         BtValider.setText("Valider");
         BtValider.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +63,9 @@ public class Magic extends javax.swing.JFrame {
 
         Msg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        txtRep.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
         txtRep.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtRep.setBorder(null);
 
         jRetour.setText("Retour");
         jRetour.addActionListener(new java.awt.event.ActionListener() {
@@ -70,57 +74,78 @@ public class Magic extends javax.swing.JFrame {
             }
         });
 
+        time.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+
+        Consigne.setFont(new java.awt.Font("Century Gothic", 0, 11)); // NOI18N
+        Consigne.setText("Devinez le nombre magic");
+
+        TitreM.setBackground(new java.awt.Color(51, 51, 255));
+        TitreM.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        TitreM.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TitreM.setText("Magic");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(251, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(Consigne))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(TitreM, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jRetour)
+                            .addComponent(BtValider)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(txtRep, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(124, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(83, 83, 83)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(48, 48, 48)
-                            .addComponent(jLabel1))
-                        .addComponent(Msg, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtRep, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(BtValider)
-                                    .addComponent(jRetour))
-                                .addGap(26, 26, 26))))
-                    .addContainerGap(173, Short.MAX_VALUE)))
+                    .addComponent(Msg, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(190, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(19, 19, 19)
+                .addComponent(TitreM, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(245, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addComponent(Consigne)
+                .addGap(18, 18, 18)
+                .addComponent(txtRep, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(BtValider)
+                .addGap(18, 18, 18)
+                .addComponent(jRetour)
+                .addGap(24, 24, 24))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(18, 18, 18)
-                    .addComponent(jLabel1)
-                    .addGap(82, 82, 82)
-                    .addComponent(txtRep, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(31, 31, 31)
+                    .addGap(184, 184, 184)
                     .addComponent(Msg, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(26, 26, 26)
-                    .addComponent(BtValider)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jRetour)
-                    .addContainerGap(29, Short.MAX_VALUE)))
+                    .addContainerGap(98, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,6 +169,16 @@ public class Magic extends javax.swing.JFrame {
         rep = Integer.parseInt(txtRep.getText());
         // System.out.println("rep = " + rep);
 
+        if (nb <= 0) { 
+                timer.stop();
+                but = 60;
+                nb = but;
+                JOptionPane.showMessageDialog(null, "Temps écoulé, retour au début");
+                gener();
+                timer.restart();
+                
+        }
+                
         if ( rep != nombre){
             
             if (rep < nombre){
@@ -153,9 +188,10 @@ public class Magic extends javax.swing.JFrame {
             if (rep > nombre){
             Msg.setText("Plus petit !");
             }
-            if (nb <= 0) { 
-                JOptionPane.showMessageDialog(null, "Temps écoulé");
-            }
+            //if (nb <= 0) { 
+             //   JOptionPane.showMessageDialog(null, "Temps écoulé");
+            //}
+        
         }
         
         if (rep == nombre){
@@ -178,7 +214,7 @@ public class Magic extends javax.swing.JFrame {
     int nombre;
     int rep;
     Timer timer;
-    int but = 60;
+    int but = 10;
     int nb = but;
     
     
@@ -239,8 +275,9 @@ public class Magic extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtValider;
+    private javax.swing.JLabel Consigne;
     private javax.swing.JLabel Msg;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel TitreM;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jRetour;
     private javax.swing.JLabel time;
