@@ -27,57 +27,155 @@ public class Connexion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        bg1 = new javax.swing.JPanel();
+        lbTitre = new javax.swing.JLabel();
+        lbSousTitre = new javax.swing.JLabel();
+        bg2 = new javax.swing.JPanel();
+        lbLogin = new javax.swing.JLabel();
+        lbMdp = new javax.swing.JLabel();
+        txtLogin = new javax.swing.JTextField();
+        txtMdp = new javax.swing.JPasswordField();
+        butConnexion = new javax.swing.JButton();
+        butInscription = new javax.swing.JButton();
+        lbPasEncore = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("CONNEXIONTJSRITNHITJGHGGJI");
+        bg1.setBackground(new java.awt.Color(73, 73, 255));
+        bg1.setForeground(new java.awt.Color(113, 122, 190));
 
-        jTextField1.setText("jTextField1");
+        lbTitre.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lbTitre.setForeground(new java.awt.Color(0, 0, 0));
+        lbTitre.setText("Bienvenue sur APoidsPlication");
 
-        jButton2.setText("jButton2");
+        lbSousTitre.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        lbSousTitre.setForeground(new java.awt.Color(0, 0, 0));
+        lbSousTitre.setText("L'application qui vous veut du bien");
 
-        jButton3.setText("jButton3");
+        javax.swing.GroupLayout bg1Layout = new javax.swing.GroupLayout(bg1);
+        bg1.setLayout(bg1Layout);
+        bg1Layout.setHorizontalGroup(
+            bg1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bg1Layout.createSequentialGroup()
+                .addContainerGap(195, Short.MAX_VALUE)
+                .addGroup(bg1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bg1Layout.createSequentialGroup()
+                        .addComponent(lbTitre)
+                        .addGap(176, 176, 176))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bg1Layout.createSequentialGroup()
+                        .addComponent(lbSousTitre)
+                        .addGap(325, 325, 325))))
+        );
+        bg1Layout.setVerticalGroup(
+            bg1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bg1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(lbTitre)
+                .addGap(18, 18, 18)
+                .addComponent(lbSousTitre)
+                .addContainerGap(59, Short.MAX_VALUE))
+        );
+
+        bg2.setBackground(new java.awt.Color(204, 206, 224));
+
+        lbLogin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbLogin.setForeground(new java.awt.Color(0, 0, 0));
+        lbLogin.setText("Login");
+
+        lbMdp.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbMdp.setForeground(new java.awt.Color(0, 0, 0));
+        lbMdp.setText("Mot de passe");
+
+        butConnexion.setText("Connexion");
+        butConnexion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butConnexionActionPerformed(evt);
+            }
+        });
+
+        butInscription.setText("Inscription");
+        butInscription.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butInscriptionActionPerformed(evt);
+            }
+        });
+
+        lbPasEncore.setFont(new java.awt.Font("Segoe UI Light", 2, 14)); // NOI18N
+        lbPasEncore.setForeground(new java.awt.Color(51, 51, 51));
+        lbPasEncore.setText("Pas encore inscrit ?");
+
+        javax.swing.GroupLayout bg2Layout = new javax.swing.GroupLayout(bg2);
+        bg2.setLayout(bg2Layout);
+        bg2Layout.setHorizontalGroup(
+            bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bg2Layout.createSequentialGroup()
+                .addGroup(bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bg2Layout.createSequentialGroup()
+                        .addGap(310, 310, 310)
+                        .addGroup(bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbLogin)
+                            .addComponent(lbMdp))
+                        .addGap(52, 52, 52)
+                        .addGroup(bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtMdp, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
+                            .addComponent(txtLogin)))
+                    .addGroup(bg2Layout.createSequentialGroup()
+                        .addGap(383, 383, 383)
+                        .addComponent(butConnexion))
+                    .addGroup(bg2Layout.createSequentialGroup()
+                        .addGap(383, 383, 383)
+                        .addComponent(butInscription))
+                    .addGroup(bg2Layout.createSequentialGroup()
+                        .addGap(372, 372, 372)
+                        .addComponent(lbPasEncore, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        bg2Layout.setVerticalGroup(
+            bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bg2Layout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addGroup(bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbLogin)
+                    .addComponent(txtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbMdp)
+                    .addComponent(txtMdp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(butConnexion)
+                .addGap(65, 65, 65)
+                .addComponent(lbPasEncore)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(butInscription)
+                .addContainerGap(119, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(73, 73, 73)
-                            .addComponent(jButton3))
-                        .addComponent(jButton1)))
-                .addContainerGap(86, Short.MAX_VALUE))
+            .addComponent(bg1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(jButton2)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jButton1)
-                .addGap(65, 65, 65))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bg1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bg2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void butConnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butConnexionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butConnexionActionPerformed
+
+    private void butInscriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butInscriptionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butInscriptionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -115,9 +213,16 @@ public class Connexion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel bg1;
+    private javax.swing.JPanel bg2;
+    private javax.swing.JButton butConnexion;
+    private javax.swing.JButton butInscription;
+    private javax.swing.JLabel lbLogin;
+    private javax.swing.JLabel lbMdp;
+    private javax.swing.JLabel lbPasEncore;
+    private javax.swing.JLabel lbSousTitre;
+    private javax.swing.JLabel lbTitre;
+    private javax.swing.JTextField txtLogin;
+    private javax.swing.JPasswordField txtMdp;
     // End of variables declaration//GEN-END:variables
 }
