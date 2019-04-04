@@ -10,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
+import bean.User;
+import static ihm.Profile.u;
 
 /**
  *
@@ -131,7 +133,7 @@ public class Magic extends javax.swing.JFrame {
     private void jRetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRetourActionPerformed
         this.setVisible(false);
         JOptionPane.showMessageDialog(null, "Merci d'avoir joué");
-        Profile p = new Profile();
+        Profile p = new Profile(u);
         p.setVisible(true);
        
         

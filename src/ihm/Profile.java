@@ -15,11 +15,12 @@ import java.util.List;
  */
 public class Profile extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Profile
-     */
-    public Profile() {
+    static User u;
+    
+    
+    public Profile(User u) {
         initComponents();
+        this.u = u;
     }
 
     /**
@@ -203,12 +204,12 @@ public class Profile extends javax.swing.JFrame {
                             .addComponent(iconNom, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(47, 47, 47)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbTitre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbSSTitre)))
+                            .addComponent(lbSSTitre)
+                            .addComponent(lbTitre, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(193, 193, 193)
                         .addComponent(butJeu, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(lbSSTitre2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -299,17 +300,11 @@ public class Profile extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         
-       String nom;
-       String prenom;
-       
-        
-        
-        
-        
-        String bienv = lbTitre.getText();
-        lbTitre.setText(bienv+" ");
-        
-        
+       String nom = u.getNom();
+       String prenom = u.getPrenom();
+ 
+       lbTitre.setText("Bienvenue, " + prenom + " " + nom);
+
         
         
         
@@ -348,7 +343,7 @@ public class Profile extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Profile().setVisible(true);
+                new Profile(u).setVisible(true);
             }
         });
     }
