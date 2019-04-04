@@ -5,6 +5,10 @@
  */
 package ihm;
 
+import bean.User;
+import dao.UserDao;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ESIC
@@ -43,7 +47,7 @@ public class Inscription extends javax.swing.JFrame {
         txtTail = new javax.swing.JTextField();
         txtMdp = new javax.swing.JTextField();
         txtPoids = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbSexe = new javax.swing.JComboBox<>();
         butInscrire = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -127,12 +131,17 @@ public class Inscription extends javax.swing.JFrame {
         txtPoids.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         txtPoids.setForeground(new java.awt.Color(0, 0, 0));
 
-        jComboBox1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F", "Autre" }));
+        cbSexe.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        cbSexe.setForeground(new java.awt.Color(0, 0, 0));
+        cbSexe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F", "Autre" }));
 
         butInscrire.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         butInscrire.setText("Inscrire");
+        butInscrire.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butInscrireActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout bg2Layout = new javax.swing.GroupLayout(bg2);
         bg2.setLayout(bg2Layout);
@@ -160,7 +169,7 @@ public class Inscription extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtMdp, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(cbSexe, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(bg2Layout.createSequentialGroup()
                         .addGroup(bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bg2Layout.createSequentialGroup()
@@ -203,7 +212,7 @@ public class Inscription extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addGroup(bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lbSexe)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbSexe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
                 .addGroup(bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbTaille)
@@ -234,6 +243,36 @@ public class Inscription extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void butInscrireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butInscrireActionPerformed
+        String nom = txtNom.getText();
+        String prenom = txtPrenom.getText();
+        String mail = txtMail.getText();
+        String mdp = txtMdp.getText();     
+        String sexe = (String) cbSexe.getSelectedItem();
+        String tail = txtTail.getText();
+        int taille = Integer.parseInt(tail);
+        String poi = txtPoids.getText();
+        double poids = Integer.parseInt(poi);
+        
+        User u = new User();
+        u.setNom(nom);
+        u.setPrenom(prenom);
+        u.setMail(mail);
+        u.setMdp(mdp);
+        u.setSexe(sexe);
+        u.setTaille(taille);
+        u.setPoids(poids);
+        
+        try{
+            UserDao.insertUser(u);
+            JOptionPane.showMessageDialog(null, "Inscription réussie");
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+        
+        this.setVisible (false);
+    }//GEN-LAST:event_butInscrireActionPerformed
 
     /**
      * @param args the command line arguments
@@ -274,7 +313,7 @@ public class Inscription extends javax.swing.JFrame {
     private javax.swing.JPanel bg1;
     private javax.swing.JPanel bg2;
     private javax.swing.JButton butInscrire;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cbSexe;
     private javax.swing.JLabel lbMail;
     private javax.swing.JLabel lbMdp;
     private javax.swing.JLabel lbNom;
