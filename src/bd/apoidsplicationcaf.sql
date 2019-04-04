@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 04 avr. 2019 à 13:53
+-- Généré le :  jeu. 04 avr. 2019 à 14:30
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `taille` int(11) NOT NULL,
   `poids` int(11) NOT NULL,
   PRIMARY KEY (`iduser`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `user`
@@ -90,10 +90,10 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`iduser`, `nom`, `prenom`, `mail`, `mdp`, `sexe`, `taille`, `poids`) VALUES
 (1, 'test1', 'test1', 'test1', 'test1', 'homme', 180, 81),
-(2, 'test2', 'test2', 'test2', 'test2', 'femme', 160, 70);
+(2, 'test2', 'test2', 'test2', 'test2', 'femme', 160, 70),
+(3, 'Mbappe', 'Kylian', 'km@psg.com', 'psg', 'homme', 170, 68);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
