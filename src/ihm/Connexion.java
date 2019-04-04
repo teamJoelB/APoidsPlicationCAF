@@ -190,7 +190,7 @@ public class Connexion extends javax.swing.JFrame {
             u = UserDao.getByLoginPass(login, mdp);
             
             if (u != null){
-            Profile p = new Profile();
+            Profile p = new Profile(u);
             p.setVisible(true);
             this.setVisible(false);
             JOptionPane.showMessageDialog(null, "Connexion réussie");
