@@ -42,6 +42,7 @@ public class Connexion extends javax.swing.JFrame {
         butConnexion = new javax.swing.JButton();
         butInscription = new javax.swing.JButton();
         lbPasEncore = new javax.swing.JLabel();
+        lbError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,11 +50,11 @@ public class Connexion extends javax.swing.JFrame {
         bg1.setForeground(new java.awt.Color(113, 122, 190));
 
         lbTitre.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        lbTitre.setForeground(new java.awt.Color(0, 0, 0));
+        lbTitre.setForeground(new java.awt.Color(255, 255, 255));
         lbTitre.setText("Bienvenue sur APoidsPlication");
 
         lbSousTitre.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        lbSousTitre.setForeground(new java.awt.Color(0, 0, 0));
+        lbSousTitre.setForeground(new java.awt.Color(255, 255, 255));
         lbSousTitre.setText("L'application qui vous veut du bien");
 
         javax.swing.GroupLayout bg1Layout = new javax.swing.GroupLayout(bg1);
@@ -114,12 +115,26 @@ public class Connexion extends javax.swing.JFrame {
         lbPasEncore.setForeground(new java.awt.Color(51, 51, 51));
         lbPasEncore.setText("Pas encore inscrit ?");
 
+        lbError.setBackground(new java.awt.Color(204, 206, 224));
+        lbError.setFont(new java.awt.Font("Segoe UI Light", 2, 14)); // NOI18N
+        lbError.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout bg2Layout = new javax.swing.GroupLayout(bg2);
         bg2.setLayout(bg2Layout);
         bg2Layout.setHorizontalGroup(
             bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bg2Layout.createSequentialGroup()
                 .addGroup(bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bg2Layout.createSequentialGroup()
+                        .addGap(373, 373, 373)
+                        .addGroup(bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bg2Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(butInscription, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbPasEncore, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(bg2Layout.createSequentialGroup()
+                        .addGap(382, 382, 382)
+                        .addComponent(butConnexion))
                     .addGroup(bg2Layout.createSequentialGroup()
                         .addGap(310, 310, 310)
                         .addGroup(bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,15 +145,8 @@ public class Connexion extends javax.swing.JFrame {
                             .addComponent(txtMdp, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
                             .addComponent(txtLogin)))
                     .addGroup(bg2Layout.createSequentialGroup()
-                        .addGap(382, 382, 382)
-                        .addComponent(butConnexion))
-                    .addGroup(bg2Layout.createSequentialGroup()
-                        .addGap(373, 373, 373)
-                        .addGroup(bg2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(bg2Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(butInscription, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lbPasEncore, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(331, 331, 331)
+                        .addComponent(lbError, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         bg2Layout.setVerticalGroup(
@@ -154,7 +162,9 @@ public class Connexion extends javax.swing.JFrame {
                     .addComponent(txtMdp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addComponent(butConnexion)
-                .addGap(63, 63, 63)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbError, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbPasEncore)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(butInscription)
@@ -193,10 +203,10 @@ public class Connexion extends javax.swing.JFrame {
             Profile p = new Profile(u);
             p.setVisible(true);
             this.setVisible(false);
-            JOptionPane.showMessageDialog(null, "Connexion réussie");
         }
         else{
-            JOptionPane.showMessageDialog(null, "Login ou Mot de passe érroné");
+            lbError.setText("Login ou Mot de passe érroné");
+            
         }
             
         } catch (Exception e){
@@ -249,6 +259,7 @@ public class Connexion extends javax.swing.JFrame {
     private javax.swing.JPanel bg2;
     private javax.swing.JButton butConnexion;
     private javax.swing.JButton butInscription;
+    private javax.swing.JLabel lbError;
     private javax.swing.JLabel lbLogin;
     private javax.swing.JLabel lbMdp;
     private javax.swing.JLabel lbPasEncore;

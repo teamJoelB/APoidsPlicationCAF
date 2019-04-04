@@ -56,7 +56,7 @@ public class Inscription extends javax.swing.JFrame {
 
         lbTitre.setBackground(new java.awt.Color(187, 187, 187));
         lbTitre.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        lbTitre.setForeground(new java.awt.Color(0, 0, 0));
+        lbTitre.setForeground(new java.awt.Color(255, 255, 255));
         lbTitre.setText("Inscription");
 
         javax.swing.GroupLayout bg1Layout = new javax.swing.GroupLayout(bg1);
