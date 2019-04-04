@@ -53,7 +53,7 @@ public class HistoDao {
     
     //CONSUTRUCTION DE LA LISTE DES DATES
         while (rs.next()){
-            dates.add(rs.getString("dateEvo"));
+            dates.add(String.valueOf(rs.getDate("dateEvo")));
         }
         return dates;
     }
