@@ -5,6 +5,8 @@
  */
 package ihm;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author stagiaire
@@ -31,6 +33,7 @@ public class Magic extends javax.swing.JFrame {
         BtValider = new javax.swing.JButton();
         Msg = new javax.swing.JLabel();
         txtRep = new javax.swing.JTextField();
+        jRetour = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,6 +42,13 @@ public class Magic extends javax.swing.JFrame {
         BtValider.setText("jButton1");
 
         Msg.setText("jLabel2");
+
+        jRetour.setText("Retour");
+        jRetour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRetourActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -53,7 +63,8 @@ public class Magic extends javax.swing.JFrame {
                         .addGap(141, 141, 141)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Msg, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtValider))))
+                            .addComponent(BtValider)
+                            .addComponent(jRetour))))
                 .addContainerGap(168, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -71,11 +82,22 @@ public class Magic extends javax.swing.JFrame {
                 .addComponent(Msg, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BtValider)
-                .addGap(51, 51, 51))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRetour)
+                .addGap(13, 13, 13))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jRetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRetourActionPerformed
+        this.setVisible(false);
+        JOptionPane.showMessageDialog(null, "Merci d'avoir joué");
+        Profile p = new Profile();
+        p.setVisible(true);
+       
+        
+    }//GEN-LAST:event_jRetourActionPerformed
 
         int nombre;
     int rep;
@@ -149,6 +171,7 @@ public class Magic extends javax.swing.JFrame {
     private javax.swing.JButton BtValider;
     private javax.swing.JLabel Msg;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jRetour;
     private javax.swing.JTextField txtRep;
     // End of variables declaration//GEN-END:variables
 }
