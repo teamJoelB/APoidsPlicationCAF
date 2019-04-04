@@ -141,7 +141,6 @@ public class Magic extends javax.swing.JFrame {
 
     private void BtValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtValiderActionPerformed
         // TODO add your handling code here:
-        timer.stop();
         rep = Integer.parseInt(txtRep.getText());
         // System.out.println("rep = " + rep);
 
@@ -154,7 +153,7 @@ public class Magic extends javax.swing.JFrame {
             if (rep > nombre){
             Msg.setText("Plus petit !");
             }
-            if (nb == 0) { 
+            if (nb <= 0) { 
                 JOptionPane.showMessageDialog(null, "Temps écoulé");
             }
         }
@@ -162,44 +161,25 @@ public class Magic extends javax.swing.JFrame {
         if (rep == nombre){
             Msg.setText("Trouvé !");
             gener();
+            timer.stop();
             but-= 5;
-            timer();
+            nb = but;
+            timer.restart();
         }
     }//GEN-LAST:event_BtValiderActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        timer.stop();
-        rep = Integer.parseInt(txtRep.getText());
-        // System.out.println("rep = " + rep);
+        gener();
+        timer();
 
-        if ( rep != nombre){
-            
-            if (rep < nombre){
-            Msg.setText("Plus grand !");
-            
-            }
-            if (rep > nombre){
-            Msg.setText("Plus petit !");
-            }
-            if (nb == 0) { 
-                JOptionPane.showMessageDialog(null, "Temps écoulé");
-            }
-        }
-        
-        if (rep == nombre){
-            Msg.setText("Trouvé !");
-            gener();
-            but-= 5;
-            timer();
-        }
     }//GEN-LAST:event_formWindowOpened
 
     int nombre;
     int rep;
     Timer timer;
     int but = 60;
-    int nb;
+    int nb = but;
     
     
     public void gener(){
@@ -210,7 +190,6 @@ public class Magic extends javax.swing.JFrame {
     
     
     private void timer(){
-        nb = but;
         timer = new Timer(1000, new ActionListener() {
         @Override
         
