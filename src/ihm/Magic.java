@@ -10,7 +10,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
-import bean.User;
 import static ihm.Profile.u;
 
 /**
@@ -170,11 +169,12 @@ public class Magic extends javax.swing.JFrame {
          txtRep.setText("");
         // System.out.println("rep = " + rep);
 
+        
         if (nb <= 0) { 
                 timer.stop();
                 but = 60;
                 nb = but;
-                JOptionPane.showMessageDialog(null, "Temps écoulé, retour au début");
+                JOptionPane.showMessageDialog(null, "Temps écoulé, retour au début !");
                 gener();
                 timer.restart();
                 
@@ -217,19 +217,9 @@ public class Magic extends javax.swing.JFrame {
     Timer timer;
     int but = 60;
     int nb = but;
-    boolean a = false;
+    int a = 0;
     
-    //while (a == false) {
-        //if (nb <= 0) { 
-              //  timer.stop();
-               // but = 60;
-               // nb = but;
-               // JOptionPane.showMessageDialog(null, "Temps écoulé, retour au début");
-               // gener();
-               // timer.restart();
-               // a = true;
-        //}
-    //}
+   
     
     public void gener(){
         nombre = (int)(Math.random()*30) ;
@@ -278,12 +268,15 @@ public class Magic extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Magic().setVisible(true);
             }
         });
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
