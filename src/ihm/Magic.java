@@ -214,7 +214,7 @@ public class Magic extends javax.swing.JFrame {
     int nombre;
     int rep;
     Timer timer;
-    int but = 10;
+    int but = 60;
     int nb = but;
     
     
