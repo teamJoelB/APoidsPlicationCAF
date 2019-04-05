@@ -331,7 +331,7 @@ public class Profile extends javax.swing.JFrame {
         this.setVisible(false);
         
         String poidS = JOptionPane.showInputDialog("Poids du jours");
-        int poids = Integer.parseInt(poidS);
+        double poids = Double.parseDouble(poidS);
         u.setPoids(poids);
         try {
           UserDao.newPoids(poids, u);  

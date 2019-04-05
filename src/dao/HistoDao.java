@@ -21,7 +21,7 @@ import java.util.List;
 
 public class HistoDao {
     
-    public static void newEvoPoids(User u, int poids)
+    public static void newEvoPoids(User u, double poids)
     throws SQLException{
         
         
@@ -33,7 +33,7 @@ public class HistoDao {
          
          
          ordre.setInt(1, u.getId());
-         ordre.setInt(2, poids);
+         ordre.setDouble(2, poids);
          ordre.execute();
 }
     
