@@ -5,7 +5,7 @@
  */
 package ihm;
 
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.time;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -167,6 +167,7 @@ public class Magic extends javax.swing.JFrame {
     private void BtValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtValiderActionPerformed
         // TODO add your handling code here:
         rep = Integer.parseInt(txtRep.getText());
+         txtRep.setText("");
         // System.out.println("rep = " + rep);
 
         if (nb <= 0) { 
@@ -216,7 +217,19 @@ public class Magic extends javax.swing.JFrame {
     Timer timer;
     int but = 60;
     int nb = but;
+    boolean a = false;
     
+    //while (a == false) {
+        //if (nb <= 0) { 
+              //  timer.stop();
+               // but = 60;
+               // nb = but;
+               // JOptionPane.showMessageDialog(null, "Temps écoulé, retour au début");
+               // gener();
+               // timer.restart();
+               // a = true;
+        //}
+    //}
     
     public void gener(){
         nombre = (int)(Math.random()*30) ;
