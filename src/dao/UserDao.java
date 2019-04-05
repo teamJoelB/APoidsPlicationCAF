@@ -14,7 +14,7 @@ import java.util.List;
 public class UserDao {
     
     
-    public static void newPoids(int poids, User u)
+    public static void newPoids(double poids, User u)
     throws SQLException{
         
         
@@ -24,7 +24,7 @@ public class UserDao {
        
         PreparedStatement ordre = connexion.prepareStatement(sql);
          
-         ordre.setInt(1, poids);
+         ordre.setDouble(1, poids);
          ordre.setInt(2, u.getId());
          
          ordre.execute();
